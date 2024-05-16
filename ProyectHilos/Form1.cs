@@ -7,87 +7,106 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
+using PersonaLibrary; //referencia de la libreria 
+//using System.Threading;
 namespace ProyectHilos
 {
     public partial class Form1 : Form
     {
-        private List<Persona> registros;
+        
         public Form1()
         {
-            InitializeComponent();
-            registros = new List<Persona>();
+            InitializeComponent();       
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-        private void RegistrarEntradaSalida(string tipoRegistro)
-        {
-            string nombre = textNombre.Text;
-            DateTime horaRegistro = DateTime.Now;
-
-            Persona nuevaPersona = new Persona(nombre, horaRegistro, tipoRegistro);
-
-            registros.Add(nuevaPersona);
-
-            string mensaje = $"{tipoRegistro} registrada para {nombre} a las {horaRegistro.ToString("HH:mm:ss")}";
-            MessageBox.Show(mensaje, $"Registro de {tipoRegistro}", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void ProcesoRegistro()
-        {
-            // Simulamos un retraso para representar el proceso de registro
-            // En una aplicación real, aquí se realizaría el proceso de registro en sí
-            Thread.Sleep(3000);
-
-            // Actualizamos la interfaz de usuario desde el hilo principal
-            this.Invoke((MethodInvoker)delegate
-            {
-                // Simplemente mostramos un mensaje para indicar que el registro se ha completado
-                MessageBox.Show("Registro completado.");
-            });
-        }
-        
-        public class Persona
-        {
-            public string Nombre { get; set; }
-            public DateTime HoraRegistro { get; set; }
-            public string TipoRegistro { get; set; }
-
-            public Persona(string nombre, DateTime horaRegistro, string tipoRegistro)
-            {
-                Nombre = nombre;
-                HoraRegistro = horaRegistro;
-                TipoRegistro = tipoRegistro;
-            }
-        }
-
+             
         private void IconoCasa_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnRegistrarEntrada_Click(object sender, EventArgs e)
+        private void MUESTREO_Paint(object sender, PaintEventArgs e)
+        { }
+
+        // SE CREA UN METODO PARA MOSTRAR EN PANEL MUESTREO
+        private void Abrir(object nuevoform)
         {
-           RegistrarEntradaSalida("Entrada");
+            if (this.MUESTREO.Controls.Count > 0)
+                this.MUESTREO.Controls.RemoveAt(0);
+            Form fn = nuevoform as Form;
+            fn.TopLevel = false;
+            fn.Dock = DockStyle.Fill;
+            this.MUESTREO.Controls.Add(fn);
+            this.MUESTREO.Tag = fn;
+            fn.Show();
+
+            // si el formulario es Inicio
+            if(fn is Inicio inicioform)
+            {
+                inicioform.Salir += InicioForm_Salida;
+            }
+
+            // si el formulario es Usuario
+            if(fn is Usuario usuarioform) 
+            {
+                usuarioform.Salida += UsuarioForm_Salida;
+            }
+
+            // si el formulario es Adiministrador
+            if (fn is Adiministrador adminform)
+            {
+                adminform.Cerrar += AdminForm_Salida;
+            }
+        }
+    
+        // Método para limpiar el panel MUESTREO
+        private void LimpiarMuestreo()
+        {
+            foreach (Control control in MUESTREO.Controls)
+            {
+                control.Dispose();
+            }
+            MUESTREO.Controls.Clear();
         }
 
-        private void btnRegistrarSalida_Click(object sender, EventArgs e)
+        // Evento para  manejar el evento Salir del formulario Inicio
+        private void InicioForm_Salida(object sender, EventArgs e)
         {
-            RegistrarEntradaSalida("Salida");
+            // Cuando se dispara el evento Salir , limpiamos el panel MUESTREO
+            LimpiarMuestreo();
         }
 
-        private void btnRegistrarEntradaSalidaHilo_Click(object sender, EventArgs e)
+        // Evento para  manejar el evento Salir del formulario Usuario
+        private void UsuarioForm_Salida(object sender, EventArgs e)
         {
-            // Simulamos el registro de entrada y salida en un hilo separado
-            Thread registroThread = new Thread(new ThreadStart(ProcesoRegistro));
-            registroThread.Start();
+            // Cuando se dispara el evento Salida , limpiamos el panel MUESTREO
+            LimpiarMuestreo();
+            Abrir(new Adiministrador());
         }
 
-        private void textNombre_TextChanged(object sender, EventArgs e)
+        // Evento para  manejar el evento Salir del formulario Adimistrador
+        private void AdminForm_Salida(object sender, EventArgs e)
         {
+            // Cuando se dispara el evento Cerrar, limpiamos el panel MUESTREO
+            LimpiarMuestreo();
+        }
 
+        private void Registro_Click(object sender, EventArgs e) // inserta el nuevo form en muestreo 
+        {
+            Abrir(new Inicio());
+
+        }
+
+        private void Usuario_Click(object sender, EventArgs e) // Aun no se que hace 
+        {} 
+
+        private void ADMIN_Click(object sender, EventArgs e) //inserta el form Usuario en Muestreo
+        {
+            Abrir(new Usuario());
         }
     }
 }
