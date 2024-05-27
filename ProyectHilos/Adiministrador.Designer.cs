@@ -42,16 +42,18 @@
             this.panel1.Controls.Add(this.Revisar);
             this.panel1.Controls.Add(this.Eliminar);
             this.panel1.Controls.Add(this.Agregar);
-            this.panel1.Location = new System.Drawing.Point(37, 33);
+            this.panel1.Location = new System.Drawing.Point(49, 41);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 253);
+            this.panel1.Size = new System.Drawing.Size(701, 311);
             this.panel1.TabIndex = 0;
             // 
             // Salir
             // 
-            this.Salir.Location = new System.Drawing.Point(28, 131);
+            this.Salir.Location = new System.Drawing.Point(37, 161);
+            this.Salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(106, 30);
+            this.Salir.Size = new System.Drawing.Size(141, 37);
             this.Salir.TabIndex = 3;
             this.Salir.Text = "SALIR";
             this.Salir.UseVisualStyleBackColor = true;
@@ -59,39 +61,46 @@
             // 
             // Revisar
             // 
-            this.Revisar.Location = new System.Drawing.Point(28, 101);
+            this.Revisar.Location = new System.Drawing.Point(37, 124);
+            this.Revisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Revisar.Name = "Revisar";
-            this.Revisar.Size = new System.Drawing.Size(106, 24);
+            this.Revisar.Size = new System.Drawing.Size(141, 30);
             this.Revisar.TabIndex = 2;
             this.Revisar.Text = "REVISAR";
             this.Revisar.UseVisualStyleBackColor = true;
+            this.Revisar.Click += new System.EventHandler(this.Revisar_Click);
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(28, 73);
+            this.Eliminar.Location = new System.Drawing.Point(37, 90);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(106, 22);
+            this.Eliminar.Size = new System.Drawing.Size(141, 27);
             this.Eliminar.TabIndex = 1;
             this.Eliminar.Text = "ELIMINAR";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Agregar
             // 
-            this.Agregar.Location = new System.Drawing.Point(28, 38);
+            this.Agregar.Location = new System.Drawing.Point(37, 47);
+            this.Agregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(106, 29);
+            this.Agregar.Size = new System.Drawing.Size(141, 36);
             this.Agregar.TabIndex = 0;
             this.Agregar.Text = "AGREGAR";
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // Adiministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(604, 331);
+            this.ClientSize = new System.Drawing.Size(805, 407);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Adiministrador";
             this.Text = "Adiministrador";
             this.panel1.ResumeLayout(false);

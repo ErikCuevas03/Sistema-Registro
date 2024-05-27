@@ -21,5 +21,20 @@ namespace ProyectHilos
         {
             Cerrar?.Invoke(this, EventArgs.Empty);
         }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private void Revisar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
