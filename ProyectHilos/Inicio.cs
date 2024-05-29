@@ -58,6 +58,11 @@ namespace ProyectHilos
         {
             Salir?.Invoke(this, EventArgs.Empty);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
