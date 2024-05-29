@@ -113,6 +113,7 @@
             this.Agregar.TabIndex = 0;
             this.Agregar.Text = "AGREGAR";
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // Adiministrador
             // 

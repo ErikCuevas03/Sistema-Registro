@@ -59,5 +59,10 @@ namespace ProyectHilos
                     MessageBox.Show(" error en concetarse a la base de datos");
                 }
         }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
