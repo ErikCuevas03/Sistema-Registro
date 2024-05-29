@@ -18,8 +18,8 @@ namespace ProyectHilos
             InitializeComponent();
         }
 
-        private string conection = "server=localhost;port=3306;uid=root;pwd='';database=alumno";
-
+        //private string conection = "server=localhost;port=3306;uid=root;pwd='';database=alumno";
+        String conection = " server = sql3.freesqldatabase.com ; port =3306 ; uid = sql3710149; pwd= '9hrWq9s4fV'; database = sql3710149";
         private void InsertarDatos(string nombre, string control, string semestre, string carrera)
         {
             using (MySqlConnection conect = new MySqlConnection(conection))

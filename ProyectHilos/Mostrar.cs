@@ -22,7 +22,8 @@ namespace ProyectHilos
         private void Mostrar_Load(object sender, EventArgs e)
         {
             // declaracion para conectar a la base de datos 
-            String conection = " server = localhost ; port =3306 ; uid = root; pwd= ''; database = alumno";
+            // String conection = " server = localhost ; port =3306 ; uid = root; pwd= ''; database = alumno";
+            String conection = " server = sql3.freesqldatabase.com ; port =3306 ; uid = sql3710149; pwd= '9hrWq9s4fV'; database = sql3710149";
             MySqlConnection conect = new MySqlConnection(conection);
 
             try
