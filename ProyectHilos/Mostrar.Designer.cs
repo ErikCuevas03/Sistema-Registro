@@ -28,21 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Bd = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Bd)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Bd
+            // 
+            this.Bd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Bd.Location = new System.Drawing.Point(40, 28);
+            this.Bd.Name = "Bd";
+            this.Bd.Size = new System.Drawing.Size(374, 176);
+            this.Bd.TabIndex = 0;
+            this.Bd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Bd_CellContentClick);
             // 
             // Mostrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(476, 312);
+            this.Controls.Add(this.Bd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Mostrar";
             this.Text = "Mostrar";
+            this.Load += new System.EventHandler(this.Mostrar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Bd)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView Bd;
     }
 }

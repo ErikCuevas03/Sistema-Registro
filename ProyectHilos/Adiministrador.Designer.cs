@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.muestra = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Salir = new System.Windows.Forms.Button();
             this.Revisar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
@@ -38,14 +40,41 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.muestra);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Salir);
             this.panel1.Controls.Add(this.Revisar);
             this.panel1.Controls.Add(this.Eliminar);
             this.panel1.Controls.Add(this.Agregar);
-            this.panel1.Location = new System.Drawing.Point(37, 33);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(526, 253);
             this.panel1.TabIndex = 0;
+            // 
+            // muestra
+            // 
+            this.muestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.muestra.AutoSize = true;
+            this.muestra.Location = new System.Drawing.Point(140, 38);
+            this.muestra.Name = "muestra";
+            this.muestra.Size = new System.Drawing.Size(339, 153);
+            this.muestra.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(28, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "CONECTAR ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Salir
             // 
@@ -65,6 +94,7 @@
             this.Revisar.TabIndex = 2;
             this.Revisar.Text = "REVISAR";
             this.Revisar.UseVisualStyleBackColor = true;
+            this.Revisar.Click += new System.EventHandler(this.Revisar_Click);
             // 
             // Eliminar
             // 
@@ -89,13 +119,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(604, 331);
+            this.ClientSize = new System.Drawing.Size(544, 331);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Adiministrador";
             this.Text = "Adiministrador";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +138,7 @@
         private System.Windows.Forms.Button Revisar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Agregar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel muestra;
     }
 }
