@@ -104,6 +104,7 @@
             this.Eliminar.TabIndex = 1;
             this.Eliminar.Text = "ELIMINAR";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Agregar
             // 

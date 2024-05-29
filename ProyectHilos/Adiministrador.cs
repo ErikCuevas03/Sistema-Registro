@@ -62,6 +62,11 @@ namespace ProyectHilos
 
         private void Agregar_Click(object sender, EventArgs e)
         {
+            Abrir(new Agregar());
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
 
         }
     }
