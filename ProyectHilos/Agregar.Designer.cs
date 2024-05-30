@@ -30,7 +30,6 @@
         {
             this.añadir = new System.Windows.Forms.GroupBox();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.txtsemestre = new System.Windows.Forms.TextBox();
             this.semes = new System.Windows.Forms.Label();
             this.txtcarrera = new System.Windows.Forms.TextBox();
             this.carer = new System.Windows.Forms.Label();
@@ -38,14 +37,15 @@
             this.nc = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.agrega = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.Nsemestre = new System.Windows.Forms.NumericUpDown();
             this.añadir.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nsemestre)).BeginInit();
             this.SuspendLayout();
             // 
             // añadir
             // 
+            this.añadir.Controls.Add(this.Nsemestre);
             this.añadir.Controls.Add(this.btnInsertar);
-            this.añadir.Controls.Add(this.txtsemestre);
             this.añadir.Controls.Add(this.semes);
             this.añadir.Controls.Add(this.txtcarrera);
             this.añadir.Controls.Add(this.carer);
@@ -70,13 +70,6 @@
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
-            // txtsemestre
-            // 
-            this.txtsemestre.Location = new System.Drawing.Point(7, 198);
-            this.txtsemestre.Name = "txtsemestre";
-            this.txtsemestre.Size = new System.Drawing.Size(156, 20);
-            this.txtsemestre.TabIndex = 7;
             // 
             // semes
             // 
@@ -135,15 +128,12 @@
             this.agrega.TabIndex = 0;
             this.agrega.Text = "Nombre ";
             // 
-            // btnEliminar
+            // Nsemestre
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(411, 244);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(116, 24);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.Nsemestre.Location = new System.Drawing.Point(6, 199);
+            this.Nsemestre.Name = "Nsemestre";
+            this.Nsemestre.Size = new System.Drawing.Size(157, 20);
+            this.Nsemestre.TabIndex = 9;
             // 
             // Agregar
             // 
@@ -151,13 +141,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 287);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.añadir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar";
             this.Text = "Agregar";
             this.añadir.ResumeLayout(false);
             this.añadir.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nsemestre)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,7 +155,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox añadir;
-        private System.Windows.Forms.TextBox txtsemestre;
         private System.Windows.Forms.Label semes;
         private System.Windows.Forms.TextBox txtcarrera;
         private System.Windows.Forms.Label carer;
@@ -174,6 +163,6 @@
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label agrega;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.NumericUpDown Nsemestre;
     }
 }

@@ -45,7 +45,7 @@ namespace ProyectHilos
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      /*  private void button1_Click(object sender, EventArgs e)
         {
 
                 MySqlConnection conect = new MySqlConnection(conection);
@@ -59,7 +59,7 @@ namespace ProyectHilos
                 {
                     MessageBox.Show(" error en concetarse a la base de datos");
                 }
-        }
+        }*/
 
         private void Agregar_Click(object sender, EventArgs e)
         {
@@ -68,7 +68,7 @@ namespace ProyectHilos
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            Abrir(new Agregar());
+            Abrir(new Eliminar());
         }
     }
 }
